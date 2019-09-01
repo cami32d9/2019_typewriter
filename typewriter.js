@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", start);
 const typeWriter = document.querySelector("#typewriter");
 const typeWriterText = typeWriter.textContent;
 
-let subStart = 0;
-let letter;
+let index = 0;
 
 /* ------------------ Functions ---------------------- */
 
@@ -16,10 +15,9 @@ function start() {
 }
 
 function typeWriterEffect() {
-  if (subStart < typeWriterText.length) {
-    letter = typeWriterText.substring(subStart, subStart + 1);
-    typeWriter.textContent += letter;
-    subStart++;
+  if (index <= typeWriterText.length) {
+    typeWriter.textContent = typeWriterText.substring(0, index);
+    index++;
     setTimeout(typeWriterEffect, 200);
   }
 }
