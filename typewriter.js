@@ -6,7 +6,6 @@ const typeWriter = document.querySelector("#typewriter");
 const typeWriterText = typeWriter.textContent;
 
 let subStart = 0;
-let subEnd = 1;
 let letter;
 
 /* ------------------ Functions ---------------------- */
@@ -18,10 +17,9 @@ function start() {
 
 function typeWriterEffect() {
   if (subStart < typeWriterText.length) {
-    letter = typeWriterText.substring(subStart, subEnd);
+    letter = typeWriterText.substring(subStart, subStart + 1);
     typeWriter.textContent += letter;
     subStart++;
-    subEnd++;
     setTimeout(typeWriterEffect, 200);
   }
 }
